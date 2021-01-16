@@ -1,5 +1,3 @@
-import { Transform } from "stream";
-
 export default {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
