@@ -1,4 +1,3 @@
-import validator from 'validator'
 import { Validation } from './validation'
 
 export class ValidationComposite implements Validation {
@@ -15,5 +14,6 @@ export class ValidationComposite implements Validation {
         return error
       }
     }
+    return null as any
   }
 }
