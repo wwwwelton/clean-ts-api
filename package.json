@@ -16,7 +16,7 @@
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "Welton Leite",
   "license": "ISC",
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.3",
@@ -53,5 +53,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.3",
     "validator": "^13.5.2"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
