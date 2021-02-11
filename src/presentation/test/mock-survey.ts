@@ -1,6 +1,6 @@
-import { AddSurveyParams, AddSurvey } from '@/domain/usescases/survey/add-survey'
-import { LoadSurveyById } from '@/domain/usescases/survey/load-survey-by-id'
-import { LoadSurveys } from '@/domain/usescases/survey/load-surveys'
+import { AddSurveyParams, AddSurvey } from '@/domain/usecases/survey/add-survey'
+import { LoadSurveyById } from '@/domain/usecases/survey/load-survey-by-id'
+import { LoadSurveys } from '@/domain/usecases/survey/load-surveys'
 import { SurveyModel } from '@/domain/models/survey'
 import { mockSurveyModels, mockSurveyModel } from '@/domain/test'
 

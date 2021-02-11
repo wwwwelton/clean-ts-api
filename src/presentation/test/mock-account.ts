@@ -1,6 +1,6 @@
-import { AddAccount, AddAccountParams } from '@/domain/usescases/account/add-account'
-import { Authentication, AuthenticationParams } from '@/domain/usescases/account/authentication'
-import { LoadAccountByToken } from '@/domain/usescases/account/load-account-by-token'
+import { AddAccount, AddAccountParams } from '@/domain/usecases/account/add-account'
+import { Authentication, AuthenticationParams } from '@/domain/usecases/account/authentication'
+import { LoadAccountByToken } from '@/domain/usecases/account/load-account-by-token'
 import { AccountModel } from '@/domain/models/account'
 import { mockAccountModel } from '@/domain/test'
 
