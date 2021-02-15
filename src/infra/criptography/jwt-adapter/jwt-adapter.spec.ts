@@ -3,11 +3,11 @@ import jwt from 'jsonwebtoken'
 
 jest.mock('jsonwebtoken', () => ({
   async sign (): Promise<string> {
-    return await Promise.resolve('any_token')
+    return Promise.resolve('any_token')
   },
 
   async verify (): Promise<string> {
-    return await Promise.resolve('any_value')
+    return Promise.resolve('any_value')
   }
 }))
 
@@ -30,7 +30,7 @@ describe('Jwt Adapter', () => {
       expect(accessToken).toBe('any_token')
     })
 
-    test('Should throws if sign throws', async () => {
+    test('Should throw if sign throws', async () => {
       const sut = makeSut()
       jest.spyOn(jwt, 'sign').mockImplementationOnce(() => {
         throw new Error()
@@ -54,7 +54,7 @@ describe('Jwt Adapter', () => {
       expect(value).toBe('any_value')
     })
 
-    test('Should throws if verify throws', async () => {
+    test('Should throw if verify throws', async () => {
       const sut = makeSut()
       jest.spyOn(jwt, 'verify').mockImplementationOnce(() => {
         throw new Error()

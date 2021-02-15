@@ -10,8 +10,8 @@ let accountCollection: Collection
 
 const makeAccessToken = async (): Promise<string> => {
   const res = await accountCollection.insertOne({
-    name: 'Welton',
-    email: 'av4t@hotmail.com',
+    name: 'Rodrigo',
+    email: 'rodrigo.manguinho@gmail.com',
     password: '123',
     role: 'admin'
   })
@@ -29,7 +29,7 @@ const makeAccessToken = async (): Promise<string> => {
 
 describe('Survey Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL ?? '')
+    await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {

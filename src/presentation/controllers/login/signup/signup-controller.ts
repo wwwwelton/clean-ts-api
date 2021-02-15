@@ -1,5 +1,6 @@
-import { HttpResponse, HttpRequest, Controller, AddAccount, Validation, Authentication } from './signup-controller-protocols'
+import { HttpResponse, HttpRequest, Controller, AddAccount, Authentication } from './signup-controller-protocols'
 import { badRequest, serverError, ok, forbidden } from '@/presentation/helpers/http/http-helper'
+import { Validation } from '@/presentation/protocols/validation'
 import { EmailInUseError } from '@/presentation/errors'
 
 export class SignUpController implements Controller {
@@ -7,7 +8,7 @@ export class SignUpController implements Controller {
     private readonly addAccount: AddAccount,
     private readonly validation: Validation,
     private readonly authentication: Authentication
-  ) { }
+  ) {}
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {

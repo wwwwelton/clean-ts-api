@@ -10,8 +10,8 @@ let accountCollection: Collection
 
 const makeAccessToken = async (): Promise<string> => {
   const res = await accountCollection.insertOne({
-    name: 'Welton',
-    email: 'av4t@hotmail.com',
+    name: 'Rodrigo',
+    email: 'rodrigo.manguinho@gmail.com',
     password: '123'
   })
   const id = res.ops[0]._id
@@ -28,7 +28,7 @@ const makeAccessToken = async (): Promise<string> => {
 
 describe('Survey Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL ?? '')
+    await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {
@@ -65,7 +65,6 @@ describe('Survey Routes', () => {
         date: new Date()
       })
       await request(app)
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         .put(`/api/surveys/${res.ops[0]._id}/results`)
         .set('x-access-token', accessToken)
         .send({
@@ -95,7 +94,6 @@ describe('Survey Routes', () => {
         date: new Date()
       })
       await request(app)
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         .get(`/api/surveys/${res.ops[0]._id}/results`)
         .set('x-access-token', accessToken)
         .expect(200)

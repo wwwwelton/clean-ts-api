@@ -8,7 +8,7 @@ let accountCollection: Collection
 
 describe('Login Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL ?? '')
+    await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {
@@ -25,12 +25,21 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/signup')
         .send({
-          name: 'Welton',
-          email: 'av4t@hotmail.com',
+          name: 'Rodrigo',
+          email: 'rodrigo.manguinho@gmail.com',
           password: '123',
           passwordConfirmation: '123'
         })
         .expect(200)
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Rodrigo',
+          email: 'rodrigo.manguinho@gmail.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(403)
     })
   })
 
@@ -38,14 +47,14 @@ describe('Login Routes', () => {
     test('Should return 200 on login', async () => {
       const password = await hash('123', 12)
       await accountCollection.insertOne({
-        name: 'Welton',
-        email: 'av4t@hotmail.com',
+        name: 'Rodrigo',
+        email: 'rodrigo.manguinho@gmail.com',
         password
       })
       await request(app)
         .post('/api/login')
         .send({
-          email: 'av4t@hotmail.com',
+          email: 'rodrigo.manguinho@gmail.com',
           password: '123'
         })
         .expect(200)
@@ -55,7 +64,7 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/login')
         .send({
-          email: 'av4t@hotmail.com',
+          email: 'rodrigo.manguinho@gmail.com',
           password: '123'
         })
         .expect(401)

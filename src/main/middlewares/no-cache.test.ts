@@ -9,7 +9,7 @@ describe('NoCache Middleware', () => {
     })
     await request(app)
       .get('/test_no_cache')
-      .expect('cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+      .expect('cache-control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
       .expect('pragma', 'no-cache')
       .expect('expires', '0')
       .expect('surrogate-control', 'no-store')
