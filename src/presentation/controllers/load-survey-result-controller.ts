@@ -7,7 +7,7 @@ export class LoadSurveyResultController implements Controller {
   constructor (
     private readonly loadSurveyById: LoadSurveyById,
     private readonly loadSurveyResult: LoadSurveyResult
-  ) { }
+  ) {}
 
   async handle (request: LoadSurveyResultController.Request): Promise<HttpResponse> {
     try {

@@ -6,7 +6,7 @@ export class LoginController implements Controller {
   constructor (
     private readonly authentication: Authentication,
     private readonly validation: Validation
-  ) { }
+  ) {}
 
   async handle (request: LoginController.Request): Promise<HttpResponse> {
     try {

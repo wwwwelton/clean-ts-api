@@ -32,9 +32,9 @@ describe('Auth Middleware', () => {
   test('Should call LoadAccountByToken with correct accessToken', async () => {
     const role = 'any_role'
     const { sut, loadAccountByTokenSpy } = makeSut(role)
-    const request = mockRequest()
-    await sut.handle(request)
-    expect(loadAccountByTokenSpy.accessToken).toBe(request.accessToken)
+    const httpRequest = mockRequest()
+    await sut.handle(httpRequest)
+    expect(loadAccountByTokenSpy.accessToken).toBe(httpRequest.accessToken)
     expect(loadAccountByTokenSpy.role).toBe(role)
   })
 

@@ -7,7 +7,7 @@ export class AuthMiddleware implements Middleware {
   constructor (
     private readonly loadAccountByToken: LoadAccountByToken,
     private readonly role?: string
-  ) { }
+  ) {}
 
   async handle (request: AuthMiddleware.Request): Promise<HttpResponse> {
     try {
