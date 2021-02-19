@@ -6,7 +6,7 @@ export class AddSurveyController implements Controller {
   constructor (
     private readonly validation: Validation,
     private readonly addSurvey: AddSurvey
-  ) {}
+  ) { }
 
   async handle (request: AddSurveyController.Request): Promise<HttpResponse> {
     try {
@@ -14,10 +14,8 @@ export class AddSurveyController implements Controller {
       if (error) {
         return badRequest(error)
       }
-      const { question, answers } = request
       await this.addSurvey.add({
-        question,
-        answers,
+        ...request,
         date: new Date()
       })
       return noContent()

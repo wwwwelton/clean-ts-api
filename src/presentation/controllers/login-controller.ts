@@ -6,7 +6,7 @@ export class LoginController implements Controller {
   constructor (
     private readonly authentication: Authentication,
     private readonly validation: Validation
-  ) {}
+  ) { }
 
   async handle (request: LoginController.Request): Promise<HttpResponse> {
     try {
@@ -14,11 +14,7 @@ export class LoginController implements Controller {
       if (error) {
         return badRequest(error)
       }
-      const { email, password } = request
-      const authenticationModel = await this.authentication.auth({
-        email,
-        password
-      })
+      const authenticationModel = await this.authentication.auth(request)
       if (!authenticationModel) {
         return unauthorized()
       }
