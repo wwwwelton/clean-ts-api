@@ -8,7 +8,7 @@ export class SignUpController implements Controller {
     private readonly addAccount: AddAccount,
     private readonly validation: Validation,
     private readonly authentication: Authentication
-  ) { }
+  ) {}
 
   async handle (request: SignUpController.Request): Promise<HttpResponse> {
     try {

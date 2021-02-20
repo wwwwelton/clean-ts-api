@@ -6,7 +6,7 @@ export class DbAddAccount implements AddAccount {
     private readonly hasher: Hasher,
     private readonly addAccountRepository: AddAccountRepository,
     private readonly checkAccountByEmailRepository: CheckAccountByEmailRepository
-  ) { }
+  ) {}
 
   async add (accountData: AddAccount.Params): Promise<AddAccount.Result> {
     const exists = await this.checkAccountByEmailRepository.checkByEmail(accountData.email)

@@ -6,7 +6,7 @@ export class AddSurveyController implements Controller {
   constructor (
     private readonly validation: Validation,
     private readonly addSurvey: AddSurvey
-  ) { }
+  ) {}
 
   async handle (request: AddSurveyController.Request): Promise<HttpResponse> {
     try {

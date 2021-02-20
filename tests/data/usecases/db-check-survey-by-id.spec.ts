@@ -20,7 +20,7 @@ const makeSut = (): SutTypes => {
 
 let surveyId: string
 
-describe('DbCheckSurveyById', () => {
+describe('DbLoadSurveyById', () => {
   beforeEach(() => {
     surveyId = faker.random.uuid()
   })

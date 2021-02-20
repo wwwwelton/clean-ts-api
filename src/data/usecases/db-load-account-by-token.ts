@@ -5,7 +5,7 @@ export class DbLoadAccountByToken implements LoadAccountByToken {
   constructor (
     private readonly decrypter: Decrypter,
     private readonly loadAccountByTokenRepository: LoadAccountByTokenRepository
-  ) { }
+  ) {}
 
   async load (accessToken: string, role?: string): Promise<LoadAccountByToken.Result> {
     let token: string
