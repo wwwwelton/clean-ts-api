@@ -1,5 +1,5 @@
-import { makeApolloServer } from './helpers'
-import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { makeApolloServer } from '@/tests/main/graphql/helpers'
+import { MongoHelper } from '@/infra/db'
 import env from '@/main/config/env'
 
 import { ApolloServer, gql } from 'apollo-server-express'
@@ -62,6 +62,7 @@ describe('SurveyResult GraphQL', () => {
         }
       }
     `
+
     test('Should return SurveyResult', async () => {
       const accessToken = await mockAccessToken()
       const now = new Date()
@@ -140,6 +141,7 @@ describe('SurveyResult GraphQL', () => {
         }
       }
     `
+
     test('Should return SurveyResult', async () => {
       const accessToken = await mockAccessToken()
       const now = new Date()

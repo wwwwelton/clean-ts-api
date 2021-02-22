@@ -1,5 +1,6 @@
 import app from '@/main/config/app'
-import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { MongoHelper } from '@/infra/db'
+
 import { Collection } from 'mongodb'
 import { hash } from 'bcrypt'
 import request from 'supertest'
@@ -25,8 +26,8 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/signup')
         .send({
-          name: 'Rodrigo',
-          email: 'rodrigo.manguinho@gmail.com',
+          name: 'Welton',
+          email: 'av4t@hotmail.com',
           password: '123',
           passwordConfirmation: '123'
         })
@@ -34,8 +35,8 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/signup')
         .send({
-          name: 'Rodrigo',
-          email: 'rodrigo.manguinho@gmail.com',
+          name: 'Welton',
+          email: 'av4t@hotmail.com',
           password: '123',
           passwordConfirmation: '123'
         })
@@ -47,14 +48,14 @@ describe('Login Routes', () => {
     test('Should return 200 on login', async () => {
       const password = await hash('123', 12)
       await accountCollection.insertOne({
-        name: 'Rodrigo',
-        email: 'rodrigo.manguinho@gmail.com',
+        name: 'Welton',
+        email: 'av4t@hotmail.com',
         password
       })
       await request(app)
         .post('/api/login')
         .send({
-          email: 'rodrigo.manguinho@gmail.com',
+          email: 'av4t@hotmail.com',
           password: '123'
         })
         .expect(200)
@@ -64,7 +65,7 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/login')
         .send({
-          email: 'rodrigo.manguinho@gmail.com',
+          email: 'av4t@hotmail.com',
           password: '123'
         })
         .expect(401)

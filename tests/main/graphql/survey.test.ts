@@ -1,5 +1,5 @@
-import { makeApolloServer } from './helpers'
-import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { makeApolloServer } from '@/tests/main/graphql/helpers'
+import { MongoHelper } from '@/infra/db'
 import env from '@/main/config/env'
 
 import { ApolloServer, gql } from 'apollo-server-express'
@@ -13,8 +13,8 @@ let apolloServer: ApolloServer
 
 const mockAccessToken = async (): Promise<string> => {
   const res = await accountCollection.insertOne({
-    name: 'Rodrigo',
-    email: 'rodrigo.manguinho@gmail.com',
+    name: 'Welton',
+    email: 'av4t@hotmail.com',
     password: '123',
     role: 'admin'
   })
@@ -62,6 +62,7 @@ describe('Survey GraphQL', () => {
         }
       }
     `
+
     test('Should return Surveys', async () => {
       const accessToken = await mockAccessToken()
       const now = new Date()

@@ -1,5 +1,5 @@
-import { makeApolloServer } from './helpers'
-import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { makeApolloServer } from '@/tests/main/graphql/helpers'
+import { MongoHelper } from '@/infra/db'
 
 import { ApolloServer, gql } from 'apollo-server-express'
 import { createTestClient } from 'apollo-server-integration-testing'
@@ -33,6 +33,7 @@ describe('Login GraphQL', () => {
         }
       }
     `
+
     test('Should return an Account on valid credentials', async () => {
       const password = await hash('123', 12)
       await accountCollection.insertOne({
@@ -73,6 +74,7 @@ describe('Login GraphQL', () => {
         }
       }
     `
+
     test('Should return an Account on valid data', async () => {
       const { mutate } = createTestClient({ apolloServer })
       const res: any = await mutate(signUpMutation, {

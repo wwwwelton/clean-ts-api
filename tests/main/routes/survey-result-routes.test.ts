@@ -1,6 +1,7 @@
 import app from '@/main/config/app'
 import env from '@/main/config/env'
-import { MongoHelper } from '@/infra/db/mongodb/mongo-helper'
+import { MongoHelper } from '@/infra/db'
+
 import { sign } from 'jsonwebtoken'
 import { Collection } from 'mongodb'
 import request from 'supertest'
@@ -10,8 +11,8 @@ let accountCollection: Collection
 
 const mockAccessToken = async (): Promise<string> => {
   const res = await accountCollection.insertOne({
-    name: 'Rodrigo',
-    email: 'rodrigo.manguinho@gmail.com',
+    name: 'Welton',
+    email: 'av4t@hotmail.com',
     password: '123'
   })
   const id = res.ops[0]._id
