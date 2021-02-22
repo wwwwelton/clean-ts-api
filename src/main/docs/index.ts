@@ -6,12 +6,12 @@ export default {
   openapi: '3.0.0',
   info: {
     title: '4Dev - Enquetes para Programadores',
-    description: 'Essa é a documentação da API feita pelo instrutor Rodrigo Manguinho no curso da Udemy de NodeJs usando Typescript, TDD, Clean Architecture e seguindo os princípios do SOLID e Design Patterns.',
+    description: 'Essa é a documentação da API feita pelo instrutor Rodrigo Manguinho durante o curso da Udemy de NodeJs usando Typescript, TDD, Clean Architecture e seguindo os princípios do SOLID e Design Patterns.',
     version: '1.0.0',
     contact: {
-      name: 'Rodrigo Manguinho',
-      email: 'rodrigo.manguinho@gmail.com',
-      url: 'https://www.linkedin.com/in/rmanguinho'
+      name: 'Welton Leite',
+      email: 'av4t@hotmail.com',
+      url: 'https://www.linkedin.com/in/welton-leite-b3492985/'
     },
     license: {
       name: 'GPL-3.0-or-later',
@@ -19,7 +19,7 @@ export default {
     }
   },
   externalDocs: {
-    description: 'Link para o treinamento completo',
+    description: 'Link do Curso',
     url: 'https://www.udemy.com/course/tdd-com-mango/?referralCode=B53CE5CA2B9AFA5A6FA1'
   },
   servers: [{
